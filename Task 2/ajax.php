@@ -1,0 +1,1 @@
+<?phptry {	$db = new PDO("sqlsrv:server=10.10.10.10;database=Base", "User", "password");} catch (PDOException $e) {	print "Error!: " . $e->getMessage();	die();}$stmt = $db->query("select sum(Count) as count from table_data");$result = $stmt->fetch();echo(json_encode($result));?>
